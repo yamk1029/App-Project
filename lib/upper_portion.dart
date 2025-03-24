@@ -14,17 +14,19 @@ class UpperPortion extends StatelessWidget {
             // aspectRatio: 16 / 9,
                   // onPageChanged: onPageChange,
                       viewportFraction: 0.9, 
-                  autoPlay: false,
+                  autoPlay: true,
           ),
-          items: [ Container(
+          items: [ 
+            Container(
             width: 300,
-            height: 150,
+            // height: 120,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: Colors.pink[50],
             ),
                  child: Padding(
-                   padding: const EdgeInsets.fromLTRB(24.0, 0, 4,8),
+                  //  padding: const EdgeInsets.fromLTRB(24.0, 0, 4,8),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                    child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         
@@ -46,7 +48,7 @@ class UpperPortion extends StatelessWidget {
             ),
             Container(
               width: 300,
-              height: 150,
+              // height: 150,
               decoration: BoxDecoration(
                borderRadius: BorderRadius.circular(15),
                color: Colors.blue[100],
@@ -58,6 +60,7 @@ class UpperPortion extends StatelessWidget {
                         
                         children: [
                           Column(
+                              // mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                                SizedBox(height: 20,),
@@ -74,7 +77,7 @@ class UpperPortion extends StatelessWidget {
             ),
        Container(
             width: 300,
-            height: 150,
+            // height: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
                color: Colors.orange[100],

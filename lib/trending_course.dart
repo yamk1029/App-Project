@@ -50,24 +50,20 @@ class TrendingCourse extends StatelessWidget {
               ),
                 Positioned(
                   top: 5,
-                  left: 5,
-                  
-              child: Container(
-                padding: EdgeInsets.all(0.1),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Colors.white,
-                ),
-              
-                  child: IconButton(
-                    icon: Icon(Icons.bookmark_outline, color: Colors.black, size: 20),
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('${courseTitles[index]} Bookmarked!')),
-                      );
-                    },
+                  left: 5,                 
+  
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(Icons.bookmark_outline, color: Colors.black, size: 15),
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('${courseTitles[index]} Bookmarked!')),
+                        );
+                      },
+                    ),
                   ),
-                ),
                 ),
             ],
           ),
@@ -84,6 +80,7 @@ class TrendingCourse extends StatelessWidget {
         ],
       ),
     );
+    
   }
 }
 

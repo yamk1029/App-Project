@@ -13,6 +13,7 @@ class UpperPortion extends StatelessWidget {
           options: CarouselOptions(
             // aspectRatio: 16 / 9,
                   // onPageChanged: onPageChange,
+                      viewportFraction: 0.9, 
                   autoPlay: false,
           ),
           items: [ Container(
@@ -43,7 +44,6 @@ class UpperPortion extends StatelessWidget {
                       ),
                  ),  
             ),
-            SizedBox(width: 5,),
             Container(
               width: 300,
               height: 150,
@@ -72,7 +72,6 @@ class UpperPortion extends StatelessWidget {
                       ),
                  ),    
             ),
-            SizedBox(width: 20,),
        Container(
             width: 300,
             height: 150,

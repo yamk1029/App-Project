@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10, 40,10,10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
             Row(
@@ -50,12 +51,18 @@ class _HomeState extends State<Home> {
             ),
            SizedBox(height: 20,),
 
-           Container( height:200, child: UpperPortion(),),
+           SizedBox( height:200, child: UpperPortion(),
+           ),
             SizedBox(height: 20,),
             Dcbp(),
             SizedBox(height: 20,),
-            Text('Trending Course'),
-            TrendingCourse(),
+            Text(
+              ' Trending Course',
+             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+             textAlign: TextAlign.left,
+             ),
+             SizedBox(height: 10),
+             TrendingCourse(),
           ],
         ),
       ),

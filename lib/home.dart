@@ -52,14 +52,30 @@ class _HomeState extends State<Home> {
               SizedBox(height: 200, child: UpperPortion()),
               SizedBox(height: 20),
               Dcbp(),
+
+
               SizedBox(height: 20),
-              Text(
-                'Trending Course',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.left,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Trending Course',
+                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.left,
+                    ),
+                  Spacer(),
+                  TextButton(onPressed: () {
+                   } ,
+                 child: Text('See All', style: TextStyle(color: Colors.blue, fontSize: 18),),
+                   ),  
+                  ],
+                ),
               ),
               SizedBox(height: 10),
               TrendingCourse(),
+
+
               SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(8.0),

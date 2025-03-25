@@ -7,6 +7,8 @@ import 'package:project/upper_portion.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
+
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -59,10 +61,22 @@ class _HomeState extends State<Home> {
               SizedBox(height: 10),
               TrendingCourse(),
               SizedBox(height: 20),
-              Text(
-                'Recently Added Course',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.left,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Recently Added Course',
+                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.left,
+                    ),
+                    Spacer(),
+             TextButton(onPressed: () {
+                } ,
+              child: Text('See All', style: TextStyle(color: Colors.blue, fontSize: 18),),
+              ),
+                  ],
+                ),
               ),
               SizedBox(height: 10),
               Recent(),

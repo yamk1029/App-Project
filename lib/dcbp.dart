@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/profile/profilescreen.dart';
 
 class Dcbp extends StatelessWidget {
   const Dcbp({super.key});
@@ -9,7 +10,9 @@ class Dcbp extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          Card(
+         InkWell(onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (_)=> ProfileScreen()));
+         },child: Card(
             child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -29,7 +32,7 @@ class Dcbp extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ),),
           Card(
             child: Container(
                decoration: BoxDecoration(

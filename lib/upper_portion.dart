@@ -46,6 +46,7 @@ class UpperPortion extends StatelessWidget {
                       ),
                  ),  
             ),
+            // SizedBox(width:20),
             Container(
               width: 300,
               // height: 150,
@@ -75,6 +76,7 @@ class UpperPortion extends StatelessWidget {
                       ),
                  ),    
             ),
+            //  SizedBox(width:20),
        Container(
             width: 300,
             // height: 150,

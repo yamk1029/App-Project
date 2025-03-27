@@ -54,17 +54,21 @@ class _HomescreenState extends State<Homescreen> {
                 child: Column(
                   children: [
                    
-                    Container( 
+                    SizedBox( 
                       height: 193,                   
-                      child:  UpperPortion(),),
+                      child:  UpperPortion(),
+                      ),
                   
                     SizedBox(height: 20),
                     Dcbp(),
+                    
                     SizedBox(height: 20),
                     _buildSectionHeader("Trending Course"),
                     TrendingCourse(),
+
                     SizedBox(height: 20),
                     _buildSectionHeader("Recently Added Course"),
+                    
                     Recent(),
                   ],
                 ),

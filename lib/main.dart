@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/home.dart';
+import 'package:project/chatsection.dart/msg.dart';
+//import 'package:project/home.dart';
 //import 'package:project/home.dart';
 //import 'package:project/profile/profilescreen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Home(),
+      home: Msg(),
     );
   }
 }

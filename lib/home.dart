@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/bottomnabhomescreen.dart';
+import 'package:project/chatsection.dart/msg.dart';
+import 'package:project/mycourses/ongoing.dart';
 import 'package:project/profile/profilescreen.dart';
-import 'package:project/recent.dart';
-
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -26,14 +26,17 @@ int selectedindex = 0 ;
         });
        },
       
+       type: BottomNavigationBarType.fixed,
         items:[
         BottomNavigationBarItem(icon: Icon(Icons.dashboard,),
         label: "home"),
+        BottomNavigationBarItem(icon: Icon(Icons.dashboard,),
+        label: " about"),
+        BottomNavigationBarItem(icon: Icon(Icons.chat_outlined),
+        label: 'Chat'),
         BottomNavigationBarItem(icon: Icon(Icons.person,),
         label: "profile"),
-        BottomNavigationBarItem(icon: Icon(Icons.dashboard,),
-        label: " about"
-          ),
+
         ] 
       ),
     );
@@ -43,10 +46,12 @@ int selectedindex = 0 ;
       switch (selectedindex) {
         case 0 : 
          return Homescreen();
-        case 1 :
-         return ProfileScreen();
+         case 1 :
+         return Ongoing();
+         case 2 :
+         return Msg();         
         default :
-         return Recent();
+         return ProfileScreen();
          }
        }
 }

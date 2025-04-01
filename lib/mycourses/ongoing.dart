@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/mycourses/completed.dart';
 
 class Ongoing extends StatefulWidget {
 
@@ -13,8 +14,7 @@ class _OngoingState extends State<Ongoing> with SingleTickerProviderStateMixin {
 
   @override
   void initState(){
-    super.initState();
-    
+    super.initState();   
     _tabController = TabController(length: 2, vsync: this);
   }
 
@@ -33,30 +33,39 @@ class _OngoingState extends State<Ongoing> with SingleTickerProviderStateMixin {
         child: Column(
           children: [
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
             elevation: 4,
             color: Colors.white,
-                child:Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TabBar( 
-                    indicator: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(50)
-                  ), labelColor: Colors.white,
-                   controller: _tabController,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                  dividerColor: Colors.transparent,
-                    tabs: [
-                    Tab(child: Text('Ongoing'),),
-                     Tab(child:Text('Completed')),
-                  ]),
+                child:SizedBox(
+                  height: 55,                              //height of the card
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TabBar( 
+                      controller: _tabController,
+                      tabs: [
+                      Tab(child: Text('Ongoing'),),
+                       Tab(child:Text('Completed')),
+                    ],
+                      indicator: BoxDecoration(
+                      color: Colors.indigo.shade200,
+                      borderRadius: BorderRadius.circular(50)
+                       ),
+                      labelColor: Colors.white,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      dividerColor: Colors.transparent,
+                   ),
+                  ),
                 ),
           ),
              Expanded(
                child: TabBarView(
                  controller: _tabController,
+         //        physics: NeverScrollableScrollPhysics(), // Disable animation effect
                 children: [
                  Text(' hello'),
-                 Text('indictor'),
+                 Completed(),
                ],),
              )
             ],

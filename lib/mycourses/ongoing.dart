@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/mycourses/completed.dart';
+import 'package:project/mycourses/ongo.dart';
 
 class Ongoing extends StatefulWidget {
 
@@ -64,33 +65,13 @@ class _OngoingState extends State<Ongoing> with SingleTickerProviderStateMixin {
                  controller: _tabController,
          //        physics: NeverScrollableScrollPhysics(), // Disable animation effect
                 children: [
-                 Text(' hello'),
+                 Ongo(),
                  Completed(),
                ],),
              )
             ],
           ),
         ),
-      
-      // Card(
-      //   elevation: 5,
-      //   child: SizedBox(
-      //     height: 120,
-      //     width: 350,
-      //     child: Padding(
-      //       padding: const EdgeInsets.all(12.0),
-      //       child: Container(
-      //         height: 100,
-      //         width: 100,
-      //         decoration: BoxDecoration(
-      //           image: Image.asset('assets/image/tc1.png'),
-      //          borderRadius: BorderRadius.circular(15),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
-
     );
   }
 }

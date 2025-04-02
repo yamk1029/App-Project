@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 
 class Completed extends StatefulWidget {
   const Completed({super.key});
@@ -28,38 +27,46 @@ class _CompletedState extends State<Completed> {
                         width: 100,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.black,
+                          image: const DecorationImage(
+                            image: AssetImage('assets/image/tc1.png'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                     Padding(
-                       padding: const EdgeInsets.only(left:8.0),
-                       child: Column(
-                        children: [
-                          Text('UI/UX design', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                          Text('8 lesson to go'),
-
-                          // Row(
-                          //   children: [
-                          //     Expanded(
-                          //       child: linearProgressIndicator(
-                          //         Value:0.90,
-                          //       )
-                          //       )
-                          //   ],
-                          // )
-
-                        ],
-                       ),
-                     ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('UI/UX design', style: TextStyle(fontSize: 16)),
+                            Text('8 lesson to go', style: TextStyle(fontSize: 12)),
+                            const SizedBox(height: 10),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 180,
+                                  child: LinearProgressIndicator(
+                                    value: 1,
+                                    backgroundColor: Colors.grey[300],
+                                    color: Colors.indigo,
+                                    minHeight: 4,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                Text('100%'),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
-                  
                 ),
-              )
+              ),
             ],
           ),
-        )
-      ]
+        ),
+      ],
     );
   }
 }

@@ -31,8 +31,8 @@ int selectedindex = 0 ;
         items:[
         BottomNavigationBarItem(icon: Icon(Icons.dashboard,),
         label: "home"),
-        BottomNavigationBarItem(icon: Icon(Icons.dashboard,),
-        label: " about"),
+        BottomNavigationBarItem(icon: Icon(Icons.note_alt_outlined,),
+        label: "Course"),
         BottomNavigationBarItem(icon: Icon(Icons.chat_outlined),
         label: 'Chat'),
         BottomNavigationBarItem(icon: Icon(Icons.person,),

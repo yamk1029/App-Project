@@ -17,6 +17,7 @@ int selectedindex = 0 ;
   Widget build(BuildContext context) {
     return Scaffold(
 
+
       body: bottomnav(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex:  selectedindex,

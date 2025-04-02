@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/dcbp.dart';
+import 'package:project/profile/profilescreen.dart';
 import 'package:project/recent.dart';
 import 'package:project/trending_course.dart';
 import 'package:project/upper_portion.dart';
@@ -12,6 +13,21 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+    void OnSelected(BuildContext context, int item){
+    switch(item){
+      case 0:
+       print("hello");
+       break;
+      case 1:
+        print("Settings Clicked");
+        break;
+      case 2:
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context)=> ProfileScreen()), 
+            (route)=> false,
+           );       
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,7 +48,16 @@ class _HomescreenState extends State<Homescreen> {
                   'Welcome, Bidhan',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
-              ],
+                Spacer(),
+                  PopupMenuButton(
+                 onSelected: (item) => OnSelected(context,item),
+                 itemBuilder: (context)=>[
+                   PopupMenuItem<int>(value:0, child: Text('Menu')),
+                   PopupMenuItem<int>(value:1, child: Text('Settings')),
+                   PopupMenuItem<int>(value:2, child: Text('Logout'))
+                  ]),
+        ],
+
             ),
             SizedBox(height: 20),
             TextFormField(
@@ -79,6 +104,7 @@ class _HomescreenState extends State<Homescreen> {
       ),
     );
   }
+
 
   Widget _buildSectionHeader(String title) {
     return Padding(

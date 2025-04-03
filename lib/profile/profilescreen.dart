@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:project/home.dart';
+
+import 'package:project/profile/certificate.dart';
+import 'package:project/profile/helpcenter.dart';
+import 'package:project/profile/mycard.dart';
+import 'package:project/profile/myproject.dart';
+import 'package:project/profile/privacypolicy.dart';
+import 'package:project/profile/rateus.dart';
+import 'package:project/profile/savedcourse.dart';
+import 'package:project/profile/feedback.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -6,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final List<Map<String, dynamic>> profileOptions = [
+    final List<Map<String, dynamic>> Options = [
       {'title': 'Certifications', 'icon': Icons.wb_incandescent_outlined},
       {'title': 'My Projects', 'icon': Icons.folder_open},
       {'title': 'Saved Course', 'icon': Icons.bookmark_border},
@@ -19,10 +29,13 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-        ),
+     leading: IconButton(onPressed:(){
+      Navigator.pushReplacement(
+        context,
+         MaterialPageRoute(
+          builder: (context)=> Home()));        
+     },
+     icon: Icon(Icons.arrow_back_ios_new),),
         title: const Text(
           'My Profile',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -69,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: profileOptions.length,
+              itemCount: Options.length,
               itemBuilder: (context, int index) {
                 return Card(
                   elevation:4,
@@ -82,17 +95,56 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   child: ListTile(
                     leading: Icon(
-                      profileOptions[index]['icon'],
+                      Options[index]['icon'],
                       color: const Color.fromARGB(255, 23, 82, 131),
                     ),
-                    title: Text(profileOptions[index]['title']),
+                    title: Text(Options[index]['title']),
                     trailing: const Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.grey,
                       size: 16,
                     ),
                     onTap: () {
-
+                      if (Options[index]['title'] == 'Certifications'){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Certificate()));
+                      }
+                      if (Options[index]['title'] == 'My Projects'){
+                        Navigator.push(
+                          context,
+                           MaterialPageRoute(builder: (context)=> Myproject()));
+                      }
+                       if (Options[index]['title'] == 'Saved Course'){
+                        Navigator.push(
+                          context,
+                       MaterialPageRoute(builder: (context)=> SavedCourse()));
+                      }
+                        if (Options[index]['title'] == 'My Card'){
+                        Navigator.push(
+                          context,
+                       MaterialPageRoute(builder: (context)=> Mycard()));
+                      }
+                        if (Options[index]['title'] == 'Help Center'){
+                        Navigator.push(
+                          context,
+                       MaterialPageRoute(builder: (context)=> Helpcenter()));
+                      }
+                        if (Options[index]['title'] == 'Privacy Policy'){
+                        Navigator.push(
+                          context,
+                       MaterialPageRoute(builder: (context)=> Privacypolicy()));
+                      }  
+                        if (Options[index]['title'] == 'Feedback'){
+                        Navigator.push(
+                          context,
+                       MaterialPageRoute(builder: (context)=> Feedback1()));
+                      }
+                        if (Options[index]['title'] == 'Rate Us'){
+                        Navigator.push(
+                          context,
+                       MaterialPageRoute(builder: (context)=> Rateus()));
+                      }                                                                                      
                     },
                   ),
                 );

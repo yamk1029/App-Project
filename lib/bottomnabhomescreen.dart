@@ -45,7 +45,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'Welcome, Bidhan',
+                  'Welcome ',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 Spacer(),

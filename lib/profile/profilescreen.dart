@@ -11,7 +11,8 @@ import 'package:project/profile/savedcourse.dart';
 import 'package:project/profile/feedback.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+    final String userName;
+  const ProfileScreen({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
       Navigator.pushReplacement(
         context,
          MaterialPageRoute(
-          builder: (context)=> Home()));        
+          builder: (context)=> Home(userName: userName,)));        
      },
      icon: Icon(Icons.arrow_back_ios_new),),
         title: const Text(

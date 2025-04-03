@@ -6,7 +6,12 @@ import 'package:project/trending_course.dart';
 import 'package:project/upper_portion.dart';
 
 class Homescreen extends StatefulWidget { 
-  const Homescreen({super.key});
+    final String userName; // Add this
+  
+  const Homescreen({
+    super.key,
+    required this.userName, // Make it required
+  });
 
   @override
   State<Homescreen> createState() => _HomescreenState();
@@ -23,7 +28,7 @@ class _HomescreenState extends State<Homescreen> {
         break;
       case 2:
           Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context)=> ProfileScreen()), 
+            MaterialPageRoute(builder: (context)=> ProfileScreen(userName: widget.userName,)), 
             (route)=> false,
            );       
     }
@@ -45,7 +50,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'Welcome ',
+                'Welcome ${widget.userName}',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 Spacer(),
@@ -85,7 +90,7 @@ class _HomescreenState extends State<Homescreen> {
                       ),
                   
                     SizedBox(height: 20),
-                    Dcbp(),
+                    Dcbp(userName: widget.userName,),
                     
                     SizedBox(height: 20),
                     _buildSectionHeader("Trending Course"),

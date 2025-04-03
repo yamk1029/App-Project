@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:project/profile/profilescreen.dart';
 
 class Dcbp extends StatelessWidget {
-  const Dcbp({super.key});
+   final String userName;  // Add this parameter
+  const Dcbp({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class Dcbp extends StatelessWidget {
       child: Row(
         children: [
          InkWell(onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (_)=> ProfileScreen()));
+          Navigator.push(context, MaterialPageRoute(builder: (_)=> ProfileScreen(userName: userName,)));
          },child: Card(
             child: Container(
                     decoration: BoxDecoration(

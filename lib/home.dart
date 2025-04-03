@@ -5,8 +5,9 @@ import 'package:project/mycourses/ongoing.dart';
 import 'package:project/profile/profilescreen.dart';
 
 class Home extends StatefulWidget {
+    final String userName;
+  const Home({super.key, required this.userName});
 
-  const Home({super.key});
   @override
   State<Home> createState() => _HomeState();
      }
@@ -47,13 +48,13 @@ int selectedindex = 0 ;
     Widget bottomnav() {
       switch (selectedindex) {
         case 0 : 
-         return Homescreen();
+        return Homescreen(userName: widget.userName); // Pass username here
          case 1 :
          return Ongoing();
          case 2 :
          return Msg();         
         default :
-         return ProfileScreen();
+         return ProfileScreen(userName: widget.userName,);
          }
        }
 }
